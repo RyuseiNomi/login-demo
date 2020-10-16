@@ -1,0 +1,23 @@
+{{#if user}}
+    <form method="post">
+        <div>
+            <label>電話番号を入力し、認証したいチャンネルのボタンを押してください。</label>
+            <br>
+            <input name="contact_to" type="text" value="{{contact_to}}" style="width:200px;" />
+        </div>
+        <div>
+            <input type="submit" id="sms" name="sms" value="SMS" />
+            <input type="submit" id="call" name="call" value="電話" />
+        </div>
+        {{#if contact_to}}
+        <div>
+            <label>送られてきた確認コードを入力してください</label>
+            <br>
+            <input name="code" type="text" />
+        </div>
+        <div>
+            <input type="submit" id="verify" name="verify" value="確認" />
+        </div>
+        {{/if}}
+    </form>
+{{/if}}

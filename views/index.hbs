@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+{{#if user}}
+<form method="get" action="/account" >
+    <div>
+        <label>ようこそ{{user.username}}さん。</label>
+    </div>
+    <div>
+        <input type="submit" value="マイアカウント"/>
+    </div>
+</form>
+{{else}}
+<form action="/login" method="post">
+    <div>
+        <label>ユーザーID：</label>
+        <input type="text" name="username"/>
+    </div>
+    <div>
+        <label>パスワード：</label>
+        <input type="password" name="password"/>
+    </div>
+    <div>
+        <input type="submit" value="ログイン"/>
+    </div>
+</form>
+{{/if}}   
